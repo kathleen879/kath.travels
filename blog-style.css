@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --bg-color: #fff9f5;
+    --primary-orange: #ff9f43;
+    --light-orange: #FFD580;
+    --dark-orange: #e67e22;
+    --text-color: #333333;
+    --white: #ffffff;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--white);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(230, 126, 34, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--dark-orange);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dark-orange);
+    text-decoration: none;
+}
+
+.section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 80vh;
+    display: none;
+    /* Hidden by default for JS switching */
+}
+
+.section.active-section {
+    display: block;
+    /* Shown via JS */
+}
+
+h2 {
+    font-size: 1rem;
+    color: black;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: normal;
+}
+
+/* Home Section */
+#home {
+    text-align: center;
+    background: linear-gradient(rgba(255, 249, 245, 0.8), rgba(255, 238, 221, 0.8)), url('https://unsplash.com') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+#home h1 {
+    font-size: 3rem;
+    color: var(--dark-orange);
+    margin-bottom: 1rem;
+}
+
+#home p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+/* Translucent Back Button */
+/* Small Translucent Back Button */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px; /* Reduced padding for a smaller footprint */
+    margin-bottom: 15px;
+    font-size: 0.85rem; /* Shrunk font size */
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 20px;
+    
+    /* Grey and translucent base */
+    background-color: rgba(128, 128, 128, 0.15); 
+    color: #555555;
+    
+    /* Smooth color transition engine */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Arrow sizing adjustment */
+.back-btn .arrow {
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+/* Black on Hover */
+.back-btn:hover {
+    background-color: #000000;
+    color: #ffffff; 
+}
+
+
+
+#explore {
+    background-color: var(--primary-orange);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--dark-orange);
+}
+
+/* For destinations tab */
+.destinations-container {
+    max-width: 1400px; /* Reduced from 1600px to keep columns tight and big */
+    margin: 40px auto;
+    padding: 0 40px; /* Increased padding for better side breathing room */
+    font-family: Arial, sans-serif;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* 2x3 Grid Layout */
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 40px; /* Increased gap to match larger landscape proportions */
+}
+
+/* Modified card wrapper to stack image and text vertically */
+.destination-card {
+    display: flex;
+    flex-direction: column; /* Stacks text below the box */
+    text-decoration: none;
+    color: var(--text-color);
+    /* Smooth transition for the scaling effect */
+    transition: transform 0.3s ease; 
+}
+
+/* Apply the hover scale effect to the WHOLE element */
+.destination-card:hover {
+    transform: scale(1.02); 
+}
+
+/* This is your gray background box holding the image */
+.card-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px; /* Increased from 250px to fit large landscape ratios */
+    background-color: #f4f4f4; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden; 
+    margin-bottom: 16px; 
+    transition: box-shadow 0.3s ease;
+}
+
+/* Deepens shadow only on the image box during hover */
+.destination-card:hover .card-content {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+}
+
+/* Optional: Ensures images scale beautifully inside the box */
+.card-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Clean text styling underneath the card box */
+.card-title {
+    font-size: 1.2rem !important; /* Overrides global h2 styles */
+    color: var(--text-color) !important;
+    text-align: left !important; /* Left-aligns blog titles */
+    margin-top: 5px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+
+/* Responsive view for tablets and mobile screens */
+@media (max-width: 900px) {
+    .destinations-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .destinations-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile phones */
+    }
+}

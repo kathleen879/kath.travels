@@ -3,25 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kathleen's Travels</title>
+    <title>Hong Kong - Kath.Travels</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <nav class="navbar">
-        <a href="#" class="logo" onclick="switchSection('home')">Kath.Travels</a>
+        <a href="#" class="logo" onclick="switchSection('home-page')">Kath.Travels</a>
         <ul class="nav-links">
+            <!-- Note: Changed active link target to #home-page if you use JS navigation later -->
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="destinations.html">Destinations</a></li>
             <li><a href="contact.html">Contact Me</a></li>
         </ul>
     </nav>
 
-    <section id="home" class="section active-section">
-        <h1>Welcome to my Travel Blog.</h1>
-        <p> There is so much of the world I have yet to see.</p>
-        <a href="destinations.html"  id ="explore">Explore Now</a>
+    <!-- Master section wrapper that handles JavaScript visibility toggling -->
+    <section id="home-page" class="section active-section">
+        
+        <!-- Welcome Hero Sub-section -->
+        <div id="home">
+            <h1>Welcome to my Travel Blog.</h1>
+            <p>Hello! My name is Kathleen. I love to travel and I figured since I will be doing this 
+                probably for the rest of my life I might as well write about it.</p>
+            <p>Happy reading!</p>
+            <a href="destinations.html" id="explore">See destinations</a>
+        </div>
+
+        <!-- About Me Sub-section -->
+        <div id="about" class="sub-section">
+            <div class="profile">
+            <h2>About Me</h2>
+            <ul>
+                <li>I am from Singapore</li>
+                <li>In my early 20s</li>
+                <li>My travelling style is spontaneous and laidback. A perfect day for me 
+                    would include admiring the mountains and the seas, going for an amazing dinner
+                    and a stroll through the local streets.</li>
+            </ul>
+            </div>
+
+            <div class="introductionphoto">
+                <img id="me" src="image/Me.jpg">
+            </div>
+        </div>
+
+        <!-- Why I Love Travelling Sub-section -->
+        <div id="why-travel" class="sub-section">
+            <h2>Why I Love Travelling</h2>
+        <p>Born and raised in Singapore, I find it easy for me to slip and get stuck in the Wake Up, Work, Eat, Sleep and Repeat routine. Travel 
+            reminds me that there is no one way to live my life. I love to imagine what it would
+            be like if I were born in the places that I travel to.
+        </p>
+        </div>
+
     </section>
-    
 </body>
-</html>
