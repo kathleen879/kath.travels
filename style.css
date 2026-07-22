@@ -279,3 +279,11 @@ h2 {
         height: 350px;         /* Shortens image slightly on mobile screens */
     }
 }
+
+footer {
+  text-align: center;
+  font-size: 0.8rem; /* Makes the text smaller */
+  color: #666666;    /* Soft grey color */
+  padding: 20px 0;   /* Adds space around the text */
+}
+

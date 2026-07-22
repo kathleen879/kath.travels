@@ -102,9 +102,20 @@ body {
 
 .blog-hero-image img {
     width: 100%;
-    height: 450px;
+    height: 500px;
     object-fit: cover;
-    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+.blog-hero-image-portrait {
+    display:flex;
+    gap:20px;
+    
+}
+
+.blog-hero-image-portrait img {
+    width: 50%;
+    height: 500px;
+    object-fit: cover;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
@@ -214,3 +225,11 @@ body {
     text-align: center;
     margin-top: 100px;
 }
+
+footer {
+  text-align: center;
+  font-size: 0.8rem; /* Makes the text smaller */
+  color: #666666;    /* Soft grey color */
+  padding: 20px 0;   /* Adds space around the text */
+}
+

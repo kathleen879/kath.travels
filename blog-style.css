@@ -238,3 +238,10 @@ h2 {
         grid-template-columns: 1fr; /* 1 column on mobile phones */
     }
 }
+
+footer {
+  text-align:center;
+  font-size: 0.8rem; /* Makes the text smaller */
+  color: #666666;    /* Soft grey color */
+  padding: 20px 0;   /* Adds space around the text */
+}
