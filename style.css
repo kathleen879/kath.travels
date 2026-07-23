@@ -50,6 +50,28 @@ body {
     color: var(--dark-orange);
 }
 
+.menu-toggle {
+    display: none; /* Hidden by default on large screens */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--dark-orange); /* Uses your existing color variable */
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Enables smooth animations later */
+}
+
+
+
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
@@ -286,4 +308,56 @@ footer {
   color: #666666;    /* Soft grey color */
   padding: 20px 0;   /* Adds space around the text */
 }
+
+/* STEP 3: Mobile specific styles for screens 768px wide or smaller */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Makes the hamburger button visible on mobile layout */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%; /* Positions the drop-down menu perfectly below the navbar row */
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        flex-direction: column; /* Stack the nav links vertically */
+        gap: 0;
+        width: 100%;
+        box-shadow: 0 4px 10px rgba(230, 126, 34, 0.1);
+        
+        /* Hides the panel smoothly by limiting its maximum height */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    /* This class will be added by JavaScript when the user taps the menu button */
+    .nav-links.mobile-active {
+        max-height: 300px; /* Expands open to reveal internal menu targets */
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 1.2rem 0; /* Creates large, easy-to-tap touch areas */
+        border-bottom: 1px solid rgba(230, 126, 34, 0.05); /* Subtle dividing line */
+    }
+    
+    /* Optional: Animates the hamburger bars into an 'X' close symbol when active */
+    .menu-toggle.open .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .menu-toggle.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.open .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
+
 
