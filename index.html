@@ -1,28 +1,31 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en"> <!--Primary Content is English-->
+<head><!--The head section contains metadata (data processed by browser and search engines that is not visible on the webpage)-->
+    <meta charset="UTF-8"> <!--Character encoding scheme, prevents browser from rendering broken symbols-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Mobile responsiveness-->
     <title>Kath.Travels</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!--Navigation Bar in Desktop View-->
     <nav class="navbar">
-        <a href="#" class="logo" onclick="switchSection('home-page')">Kath.Travels</a>
+    <a href="index.html" class="logo">Kath.Travels</a>
 
+    <!--Menu-->
+    <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+    </ul>
+
+    <!--Menu turns into Hamburger Icon on Mobile-->
     <button class="menu-toggle" aria-label="Toggle navigation">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
     </button>
-
-        <ul class="nav-links">
-            <!-- Note: Changed active link target to #home-page if you use JS navigation later -->
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="destinations.html">Destinations</a></li>
-            <li><a href="contact.html">Contact Me</a></li>
-        </ul>
     </nav>
 
     <!-- Master section wrapper that handles JavaScript visibility toggling -->
@@ -31,16 +34,14 @@
         <!-- Welcome Hero Sub-section -->
         <div id="home">
             <h1>Welcome to my Travel Blog.</h1>
-            <p>Hello! My name is Kathleen. I love to travel and I figured since I will be doing this 
-                probably for the rest of my life I might as well write about it.</p>
-            <p>Happy reading!</p>
-            <a href="destinations.html" id="explore">See destinations</a>
+            <p>Hello! I'm Kathleen. 
+            <br>I love gaining new experiences in different countries. Follow me along! </p>
         </div>
 
         <!-- About Me Sub-section -->
+        <div id="aboutmeheader"><h2>About Me</h2></div>
         <div id="about" class="sub-section">
             <div class="profile">
-            <h2>About Me</h2>
             <ul>
                 <li>I am from Singapore</li>
                 <li>In my early 20s</li>
@@ -59,8 +60,7 @@
         <div id="why-travel" class="sub-section">
             <h2>Why I Love Travelling</h2>
         <p>Born and raised in Singapore, I find it easy for me to slip and get stuck in the Wake Up, Work, Eat, Sleep and Repeat routine. Travel 
-            reminds me that there is no one way to live my life. I love to imagine what it would
-            be like if I were born in the places that I travel to.
+            reminds me that there is no one way to live my life. There is still so much to see!
         </p>
         </div>
 
