@@ -33,6 +33,7 @@ p {
     max-width: 800px;
 }
 
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -108,6 +109,10 @@ p {
 
 #about-me-points{
     justify-content: center;
+}
+
+#articles{
+    margin-top:20px;
 }
 
 #articles-showcase{
