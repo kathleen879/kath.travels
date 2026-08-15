@@ -65,12 +65,16 @@ body {
 }
 
 /* Header Text Frame */
-.blog-header {
+.header {
     text-align: center;
     margin-bottom: 2.5rem;
 }
 
-.blog-meta {
+#title{
+    font-size:40px;
+}
+
+.date {
     font-size: 0.9rem;
     color: #777777;
     text-transform: uppercase;
@@ -78,14 +82,14 @@ body {
     margin-bottom: 0.8rem;
 }
 
-.blog-title {
+.header h1 {
     font-size: 2.8rem;
     color: var(--dark-orange);
     line-height: 1.2;
     margin-bottom: 1rem;
 }
 
-.blog-excerpt {
+.header p {
     font-size: 1.25rem;
     color: #666666;
     line-height: 1.5;
@@ -94,43 +98,17 @@ body {
     margin: 0 auto;
 }
 
-/* Featured cover photo rules */
-.blog-hero-image {
-    width: 100%;
-    margin-bottom: 3rem;
+.landscape-image {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width: 80%;
+    margin-bottom: 3rem
 }
 
-.blog-hero-image img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-}
-.blog-hero-image-portrait {
-    display:flex;
-    gap:20px;
-    
-}
-
-.blog-hero-image-portrait img {
-    width: 50%;
-    height: 500px;
-    object-fit: cover;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-}
-
-/* Article Body Typography Rules */
 .blog-content {
-    line-height: 1.9;
+    line-height: 1.8;
     color: var(--text-color);
-}
-
-/* Distinctive first intro paragraph formatting */
-.blog-content .intro-text {
-    font-size: 1.3rem;
-    color: #222222;
-    font-weight: 400;
-    margin-bottom: 2rem;
 }
 
 .blog-content p {
@@ -138,7 +116,6 @@ body {
     margin-bottom: 1.8rem;
 }
 
-/* Inside Content Headings */
 .blog-content h2 {
     font-size: 1.85rem;
     color: var(--dark-orange);
@@ -146,15 +123,25 @@ body {
     text-align: left; /* Aligns left organically within articles */
 }
 
-/* Travel Quote callout boxes */
-.blog-content blockquote {
-    font-size: 1.4rem;
-    font-style: italic;
-    color: var(--dark-orange);
-    border-left: 4px solid var(--primary-orange);
-    padding: 0.5rem 0 0.5rem 1.5rem;
-    margin: 2.5rem 0;
-    background-color: #fffaf7;
+.portrait-image{
+    display:flex;
+    flex-direction:row;
+    gap:20px;
+    justify-content: center;
+}
+
+.portrait-image img{
+
+    gap:20px;
+    width:30%;
+}
+
+.portrait-image img {
+    width: 300px;
+    height:400px;
+    object-fit: cover;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    align-items: center;
 }
 
 /* Clean double column image gallery inside content */
@@ -186,39 +173,6 @@ body {
     padding-top: 2rem;
     border-top: 1px solid #eee;
     text-align: center;
-}
-
-.back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 14px; /* Reduced padding for a smaller footprint */
-    margin-bottom: 15px;
-    margin-top:15px;
-    margin-left:15px;
-    font-size: 0.85rem; /* Shrunk font size */
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 20px;
-    
-    /* Grey and translucent base */
-    background-color: rgba(128, 128, 128, 0.15); 
-    color: #555555;
-    
-    /* Smooth color transition engine */
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-/* Arrow sizing adjustment */
-.back-btn .arrow {
-    font-size: 0.95rem;
-    line-height: 1;
-}
-
-/* Black on Hover */
-.back-btn:hover {
-    background-color: #000000;
-    color: #ffffff; 
 }
 
 .conclusion{
