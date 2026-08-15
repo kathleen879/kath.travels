@@ -19,51 +19,44 @@
         <li><a href="destinations.html">Destinations</a></li>
         <li><a href="contact.html">Contact Me</a></li>
     </ul>
-
-    <!--Menu turns into Hamburger Icon on Mobile-->
-    <button class="menu-toggle" aria-label="Toggle navigation">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </button>
     </nav>
 
-    <!-- Master section wrapper that handles JavaScript visibility toggling -->
-    <section id="home-page" class="section active-section">
-        
-        <!-- Welcome Hero Sub-section -->
-        <div id="home">
+    <section id="home-page">
+        <!-- Home-Text -->
+        <div id="home-text">
             <h1>Welcome to my Travel Blog.</h1>
-            <p>Hello! I'm Kathleen. 
-            <br>I love gaining new experiences in different countries. Follow me along! </p>
+            <p>Hello! I'm Kathleen. I love gaining new experiences in different countries. Follow me along! </p>
         </div>
 
-        <!-- About Me Sub-section -->
-        <div id="aboutmeheader"><h2>About Me</h2></div>
-        <div id="about" class="sub-section">
-            <div class="profile">
-            <ul>
+        <!-- About Me -->
+         <div id="about-me-content">
+        <div id="about-me-title"><h2>About Me</h2></div>
+        <div id="about-me">
+            <img id="about-me-photo" src="image/Me.jpg">
+            <ul id = about-me-points>
                 <li>I am from Singapore</li>
                 <li>In my early 20s</li>
                 <li>My travelling style is spontaneous and laidback. A perfect day for me 
                     would include admiring the mountains and the seas, going for an amazing dinner
                     and a stroll through the local streets.</li>
             </ul>
+        </div>
+        </div>
+    </section>
+
+    <section id="articles">
+        <h2>My Articles</h2>
+        <div id="articles-showcase">
+            <div class="article-set">
+            <a href="hkust.html"><img src="image/HKUST.jpg" class="article-picture"></a>
+            <h2>6 Things I Wished I Knew Before My Student Exchange At HKUST</h2>
             </div>
 
-            <div class="introductionphoto">
-                <img id="me" src="image/Me.jpg">
+            <div class="article-set">
+            <a href="hk-what-to-do.html"><img src="image/Disneyland.jpg" class="article-picture"></a>
+            <h2>8 Amazing Things To Do In Hong Kong</h2>
             </div>
-        </div>
-
-        <!-- Why I Love Travelling Sub-section -->
-        <div id="why-travel" class="sub-section">
-            <h2>Why I Love Travelling</h2>
-        <p>Born and raised in Singapore, I find it easy for me to slip and get stuck in the Wake Up, Work, Eat, Sleep and Repeat routine. Travel 
-            reminds me that there is no one way to live my life. There is still so much to see!
-        </p>
-        </div>
-
+        <div>
     </section>
         <!-- Link your external JavaScript file here -->
     <script src="index.js"></script>
