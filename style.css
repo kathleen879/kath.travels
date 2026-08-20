@@ -18,6 +18,7 @@ body {
     background-color: var(--background);
     color: var(--text-color);
     line-height: 1.6; /*vertical spacing between lines of text to be 160% of text size*/
+    min-height:100vh;
 }
 
 h2 {
@@ -52,7 +53,33 @@ p {
     gap: 2rem;
 }
 
+.side-bar {
+    display: none;
+    list-style: none;
+    gap: 2rem;
+    position:fixed;
+    top:0;
+    right:0;
+    height:100vh;
+    width:200px;
+    z-index:999;
+    background-color:rgba(255,255,255, 0.5);
+    box-shadow: -10px 0 10px rgba(180, 151, 151, 0.1);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding:25px;
+    backdrop-filter: blur(10px);
+}
+
 .nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.side-bar a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
@@ -63,6 +90,16 @@ p {
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--dark-orange);
+}
+
+/*Interactive states*/
+.side-bar a:hover,
+.side-bar a.active {
+    color: var(--dark-orange);
+}
+
+.menu-button{
+    display:none;
 }
 
 .logo {
@@ -115,7 +152,7 @@ p {
     margin-top:20px;
 }
 
-#articles-showcase{
+#articles-showcase{ /*Grid Display*/
     display:grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
@@ -191,6 +228,28 @@ p {
     padding:30px;
     width:200px;
     background-color: whitesmoke;
+    position:relative;
+    overflow: hidden;
+}
+
+.destination-card-set.locked a {
+    pointer-events: none;
+    cursor: default;
+}
+
+.destination-card-set.locked .locked {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color:white;
+    background: rgba(0, 0, 0, 0.65); /* Dim background */
+    backdrop-filter: blur(5px);      /* Blur out the hidden destination image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;                     /* Sits over the image and text */
 }
 
 /* CSS Styling for contact.html */
@@ -219,6 +278,12 @@ p {
 @media (max-width:800px){
     .contact-inputs{
         width:80vw;
+    }
+    .hideOnMobile{
+        display:none;   
+    }
+    .menu-button{
+        display:block;
     }
 }
 
