@@ -1,12 +1,12 @@
-* {
+* { /* asterisk is the universal selector in css */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* border box ensures that padding is within the width that is specified */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-:root {
-    --bg-color: #fff9f5;
+:root { /*Setting CSS variables*/
+    --background: #fff9f5;
     --primary-orange: #ff9f43;
     --light-orange: #FFD580;
     --dark-orange: #e67e22;
@@ -15,27 +15,61 @@
 }
 
 body {
-    background-color: var(--bg-color);
+    background-color: var(--background);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.6; /*vertical spacing between lines of text to be 160% of text size*/
+    min-height:100vh;
 }
 
-   .navbar {
+h2 {
+    font-size: 2rem;
+    color: var(--dark-orange);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+}
+
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--white);
     padding: 1rem 2rem;
     box-shadow: 0 2px 5px rgba(230, 126, 34, 0.1);
-    position: sticky;
+    position: sticky; /*Navigation Bar is freezed*/
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /*High stacking order makes sure all items slide underneath the nav bar*/
 }
 
 .nav-links {
     display: flex;
     list-style: none;
     gap: 2rem;
+}
+
+.side-bar {
+    display: none;
+    list-style: none;
+    gap: 2rem;
+    position:fixed;
+    top:0;
+    right:0;
+    height:100vh;
+    width:200px;
+    z-index:999;
+    background-color:rgba(255,255,255, 0.5);
+    box-shadow: -10px 0 10px rgba(180, 151, 151, 0.1);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding:25px;
+    backdrop-filter: blur(10px);
 }
 
 .nav-links a {
@@ -45,9 +79,27 @@ body {
     transition: color 0.3s ease;
 }
 
+.side-bar a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/*Interactive states*/
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--dark-orange);
+}
+
+/*Interactive states*/
+.side-bar a:hover,
+.side-bar a.active {
+    color: var(--dark-orange);
+}
+
+.menu-button{
+    display:none;
 }
 
 .logo {
@@ -159,53 +211,78 @@ body {
     border-radius: 8px;
 }
 
-/* Responsive fixes for article galleries and headers */
-@media (max-width: 600px) {
-    .blog-title { font-size: 2rem; }
-    .blog-hero-image img { height: 280px; }
-    .blog-gallery { flex-direction: column; }
-    .blog-gallery img { width: 100%; height: 220px; }
+/* Mobile */
+@media (max-width:768px){
+    .contact-inputs{
+        width:80vw;
+    }
+    .hideOnMobile{
+        display:none;   
+    }
+    .menu-button{
+        display:block;
+        display:none;
+    }
+    .logo{
+    font-size:15px;
+    }
+
+    .portrait-image {
+        /* Stacks portrait images vertically instead of crammed side-by-side */
+        flex-direction: column; 
+        align-items: center;
+        gap: 25px; /* Vertical gap between stacked photos */
+        padding: 0 20px; /* Prevents images from touching the absolute screen edges */
+    }
+
+    .portrait-image img {
+        /* Overrides the hardcoded 300px/30% desktop widths so it shrinks safely */
+        width: 100%; 
+        max-width: 320px; /* Keeps the portrait look clean without letting it get massive */
+        
+        /* Adapts height fluidly while keeping your original 300x400 aspect ratio shape */
+        height: auto; 
+        aspect-ratio: 300 / 400; 
+    }
+    .landscape-image {
+        /* Bumps up width from 80% to 90% or 100% so it utilizes tight screen space better */
+        width: 90%; 
+        max-width: 100%;
+        margin-bottom: 2rem; /* Slightly reduced spacing for shorter mobile viewports */
+    }
+
+    .date {
+    font-size: 8px;
 }
 
-/* Back Link Button Area */
-.blog-footer {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid #eee;
-    text-align: center;
+.header h1 {
+    font-size:30px;
 }
 
-.conclusion{
-    text-align: center;
-    margin-top: 100px;
+.header p {
+    font-size: 10px;
+    color: #666666;
+    line-height: 1.5;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-footer {
-  text-align: center;
-  font-size: 0.8rem; /* Makes the text smaller */
-  color: #666666;    /* Soft grey color */
-  padding: 20px 0;   /* Adds space around the text */
+.blog-content p {
+    font-size: 10px;
 }
 
-/* STEP 2: Style the hamburger lines and hide them on desktop screens */
-.menu-toggle {
-    display: none; /* Hidden by default on large screens */
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    z-index: 1001;
+.blog-content h2 {
+    font-size: 15px;
+    color: var(--dark-orange);
+    margin: 2.5rem 0 1rem 0;
+    text-align: left;
+}
 }
 
-.menu-toggle .bar {
-    height: 3px;
-    width: 100%;
-    background-color: var(--dark-orange); /* Uses your existing color variable */
-    border-radius: 5px;
-    transition: all 0.3s ease; /* Enables smooth animations later */
+/* Desktop - specifically hamburger menu not visible in desktop view */
+@media screen and (min-width: 768px) {
+  .menubutton {
+    display: none !important;
+  }
 }
-
-

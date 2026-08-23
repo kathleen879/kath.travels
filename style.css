@@ -275,7 +275,7 @@ p {
 }
 
 /* Mobile */
-@media (max-width:800px){
+@media (max-width:768px){
     .contact-inputs{
         width:80vw;
     }
@@ -284,8 +284,107 @@ p {
     }
     .menu-button{
         display:block;
+        display:none;
+    }
+
+}
+@media (max-width:768px){
+#home-text h1 {
+    font-size: 30px;
+    color: var(--dark-orange);
+    margin-bottom: 1rem;
+}
+
+#home-text p {
+    font-size: 11px;
+    margin-bottom: 1rem;
+}
+
+.logo{
+    font-size:15px;
+}
+}
+
+/* Mobile for About Me Section*/
+@media (max-width:768px){
+#about-me-content{
+    min-height: 90vh;
+}
+#about-me{
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+    gap:50px;
+    padding:0 20px;
+}
+
+#about-me-photo{
+    width:120px;
+    border-radius:10px;
+}
+
+#about-me-points{
+    justify-content: center;
+    font-size:10px;
+}
+
+#about-me-points ul {
+    /* Keeps the text readable instead of stretching ultra-wide */
+    max-width: 400px; 
+    /* Centers the actual bullet-point block */
+    margin: 0 auto; 
+    gap:5px;
+    display:flex;
+    flex-direction: column;
+}
+}
+
+/* Mobile for the Articles Showcase*/
+@media (max-width:768px){
+#articles-showcase {
+        /* Changes side-by-side grid to 1 stacked column */
+        grid-template-columns: 1fr; 
+        row-gap: 30px; /* Adds space between stacked articles */
+        padding: 0 15px; /* Keeps text away from phone screen edges */
+    }
+
+    .article-set {
+        /* Removes fixed 600px so it can shrink safely on phones */
+        width: 100%; 
+        max-width: 600px; 
+    }
+    .article-picture {
+        /* Removes fixed 650px and 400px so photos fit mobile screens */
+        width: 100%; 
+        max-width: 650px;
+        height: auto; 
+        /* Keeps your exact desktop photo proportions without distortion */
+        aspect-ratio: 650 / 400; 
+    }
+    
+    .article-set h2 {
+        text-align: center; /* Centers article titles nicely on mobile layouts */
     }
 }
 
 
+/* Desktop - specifically hamburger menu not visible in desktop view */
+@media screen and (min-width: 768px) {
+  .menubutton {
+    display: none !important;
+  }
+}
 
+/*Mobile for Destinations*/
+@media (max-width:768px){
+.destinations-cards{
+    margin:40px 40px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.destination-card-set{
+    margin-bottom: 30px;
+}
+}
